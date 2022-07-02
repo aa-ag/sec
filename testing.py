@@ -1,16 +1,15 @@
 ############------------ IMPORTS ------------###################################
-from urllib.request import Request, urlopen
+import requests
+from pprint import pprint
 
 
 ############------------ FUNCTION(S) ------------##############################
-def get_data():
-    cik = 'aapl'
-    url = f'https://data.sec.gov/submissions/CIK{cik}.json'
-    h = {"Accept": "application/json", "User-Agent": "Mozilla/5.0"}
-    http_request = Request(url, headers=h)
-    http_response = urlopen(http_request)
-    print(http_response.status)
+def get_ciks():
+    url = 'https://www.sec.gove/files/company_tickets.json'
+    http_request = requests.get(url)
+    response = http_request.json()
+    pprint(response)
 
 
 ############------------ DRIVER CODE ------------##############################ß
-get_data()
+get_ciks()
