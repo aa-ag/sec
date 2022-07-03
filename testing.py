@@ -16,6 +16,10 @@ def get_ciks():
             response, max_level=0
         ).values[0]
     )
+
+    df["cik_str"] = df["cik_str"].astype(str).str.zfill(10)
+    df.set_index("title", inplace=True)
+
     print(df.head(3))
 
 
