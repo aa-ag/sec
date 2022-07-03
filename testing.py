@@ -5,10 +5,9 @@ from pprint import pprint
 
 
 ############------------ FUNCTION(S) ------------##############################
-def get_ciks():
+def get_ciks(headers):
     url = "https://www.sec.gov/files/company_tickers.json"
-    headers = {"User-Agent": "aaron@aguerrevere.dev"}
-    http_request = requests.get(url, headers)
+    http_request = requests.get(url, headers=headers)
     response = http_request.json()
     
     df = pd.json_normalize(
@@ -20,8 +19,20 @@ def get_ciks():
     df["cik_str"] = df["cik_str"].astype(str).str.zfill(10)
     df.set_index("title", inplace=True)
 
-    print(df.head(3))
+    df.to_csv("ciks.csv")
+
+
+def get_company_facts(cik, headers):
+    api = "https://data.sec.gov/api/xbrl/"
+    endpoint = f"companyfacts/CIK{cik}.json"
+    url = api + endpoint
+    http_request = requests.get(url, headers=headers)
+    print(http_request.status_code)
+
 
 
 ############------------ DRIVER CODE ------------##############################ß
-get_ciks()
+if __name__ == "__main__":
+    # get_ciks(headers)
+    headers = {"User-Agent": "aaron@aguerrevere.dev"}
+    get_company_facts("0000320193", headers)
