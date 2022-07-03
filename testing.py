@@ -11,8 +11,12 @@ def get_ciks():
     http_request = requests.get(url, headers)
     response = http_request.json()
     
-    df = pd.json_normalize(response)
-    print(df)
+    df = pd.json_normalize(
+        pd.json_normalize(
+            response, max_level=0
+        ).values[0]
+    )
+    print(df.head(3))
 
 
 ############------------ DRIVER CODE ------------##############################ß
