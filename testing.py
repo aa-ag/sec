@@ -42,7 +42,7 @@ def get_company_facts(cik, headers):
 
 
 
-############------------ DRIVER CODE ------------##############################ß
+############------------ DRIVER CODE ------------##############################
 if __name__ == "__main__":
     # get_ciks(headers)
     headers = {"User-Agent": "aaron@aguerrevere.dev"}
