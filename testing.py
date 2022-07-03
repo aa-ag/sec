@@ -1,5 +1,6 @@
 ############------------ IMPORTS ------------###################################
 import requests
+import pandas as pd
 from pprint import pprint
 
 
@@ -9,7 +10,9 @@ def get_ciks():
     headers = {"User-Agent": "aaron@aguerrevere.dev"}
     http_request = requests.get(url, headers)
     response = http_request.json()
-    pprint(response)
+    
+    df = pd.json_normalize(response)
+    print(df)
 
 
 ############------------ DRIVER CODE ------------##############################ß
