@@ -27,7 +27,8 @@ def get_company_facts(cik, headers):
     endpoint = f"companyfacts/CIK{cik}.json"
     url = api + endpoint
     http_request = requests.get(url, headers=headers)
-    print(http_request.status_code)
+    response = http_request.json()
+    pprint(response)
 
 
 
