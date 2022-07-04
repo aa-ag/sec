@@ -41,9 +41,21 @@ def get_company_facts(cik, headers):
     pprint(response)
 
 
+def get_company_financials(cik, headers):
+    # set urls, headers & make a request
+    api = "https://data.sec.gov/api/xbrl/"
+    endpoint = f"companyconcepts/CIK{cik}/us-gaap/[Tag].json"
+    url = api + endpoint
+    http_request = requests.get(url, headers=headers)
+    # format the response as a json
+    response = http_request.json()
+    # pretty-print the response
+    pprint(response)
+
 
 ############------------ DRIVER CODE ------------##############################
 if __name__ == "__main__":
     # get_ciks(headers)
     headers = {"User-Agent": "aaron@aguerrevere.dev"}
-    get_company_facts("0000320193", headers)
+    # get_company_facts("0000320193", headers)
+    get_company_financials("0000320193", headers)
