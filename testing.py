@@ -44,13 +44,15 @@ def get_company_facts(cik, headers):
 def get_company_financials(cik, headers):
     # set urls, headers & make a request
     api = "https://data.sec.gov/api/xbrl/"
-    endpoint = f"companyconcepts/CIK{cik}/us-gaap/[Tag].json"
+    endpoint = f"companyconcept/CIK{cik}/us-gaap/Assets.json"
     url = api + endpoint
+    print(url)
     http_request = requests.get(url, headers=headers)
-    # format the response as a json
-    response = http_request.json()
-    # pretty-print the response
-    pprint(response)
+    print(http_request.status_code)
+    # # format the response as a json
+    # response = http_request.json()
+    # # pretty-print the response
+    # pprint(response)
 
 
 ############------------ DRIVER CODE ------------##############################
