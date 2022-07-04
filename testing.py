@@ -46,13 +46,14 @@ def get_company_financials(cik, headers):
     api = "https://data.sec.gov/api/xbrl/"
     endpoint = f"companyconcept/CIK{cik}/us-gaap/Assets.json"
     url = api + endpoint
-    print(url)
     http_request = requests.get(url, headers=headers)
-    print(http_request.status_code)
-    # # format the response as a json
-    # response = http_request.json()
-    # # pretty-print the response
-    # pprint(response)
+    if http_request.status_code == 200:
+        # format the response as a json
+        response = http_request.json()
+        # pretty-print the response
+        pprint(response)
+    else:
+        print(f"Something's wrong.\nStatus code: {http_request.status_code}")
 
 
 ############------------ DRIVER CODE ------------##############################
