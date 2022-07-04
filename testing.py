@@ -2,6 +2,7 @@
 import requests
 import pandas as pd
 from pprint import pprint
+import json
 
 
 ############------------ FUNCTION(S) ------------##############################
@@ -66,7 +67,9 @@ def get_company_submissions(cik, headers):
         # format the response as a json
         response = http_request.json()
         # pretty-print the response
-        pprint(response)
+        store = open("submissions.json", "w")
+        json.dump(response, store)
+        print("All done.")
     else:
         print(f"Something's wrong.\nStatus code: {http_request.status_code}")
 

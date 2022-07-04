@@ -1,5 +1,6 @@
-# store
+# store(s)
 *.csv
+*.json
 
 # Settings or config
 settings
