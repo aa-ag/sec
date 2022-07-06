@@ -74,21 +74,11 @@ def get_company_submissions(cik, headers):
         print(f"Something's wrong.\nStatus code: {http_request.status_code}")
 
 
-def get_ten_ks(cik, headers):
-    # set urls, headers & make a request
-    api = "https://www.sec.gov/Archives/edgar/data/"
-    endpoint = f"submissions/CIK{cik}.json"
-    url = api + endpoint
-    http_request = requests.get(url, headers=headers)
-    if http_request.status_code == 200:
-        # format the response as a json
-        response = http_request.json()
-        # pretty-print the response
-        store = open("submissions.json", "w")
-        json.dump(response, store)
-        print("All done.")
-    else:
-        print(f"Something's wrong.\nStatus code: {http_request.status_code}")
+def get_forms():
+    url = "https://www.sec.gov/forms"
+    tables = pd.read_html(url)
+    print(tables)
+
 
 ############------------ DRIVER CODE ------------##############################
 if __name__ == "__main__":
@@ -96,4 +86,5 @@ if __name__ == "__main__":
     headers = {"User-Agent": "aaron@aguerrevere.dev"}
     # get_company_facts("0000320193", headers)
     # get_company_financials("0000320193", headers)
-    get_company_submissions("0001463172", headers)
+    # get_company_submissions("0001463172", headers)
+    get_forms()
