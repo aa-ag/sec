@@ -78,7 +78,7 @@ def get_forms():
     url = "https://www.sec.gov/forms"
     tables = pd.read_html(url)
     for row in tables:
-        print(row)
+        print(row["Number"])
 
 
 ############------------ DRIVER CODE ------------##############################
