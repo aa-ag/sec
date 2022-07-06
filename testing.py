@@ -83,7 +83,9 @@ def get_forms():
 
     for i, row in df.iterrows():
         form_name = row["Number"].split(':')[1]
-        print(form_name)
+        forms.add(form_name)
+
+    print(forms)
 
 
 ############------------ DRIVER CODE ------------##############################
