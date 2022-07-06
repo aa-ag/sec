@@ -77,7 +77,9 @@ def get_company_submissions(cik, headers):
 def get_forms():
     url = "https://www.sec.gov/forms"
     tables = pd.read_html(url)
-    for row in tables:
+    df = pd.concat(tables)
+
+    for i, row in df.iterrows():
         print(row["Number"])
 
 
