@@ -77,7 +77,8 @@ def get_company_submissions(cik, headers):
 def get_forms():
     url = "https://www.sec.gov/forms"
     tables = pd.read_html(url)
-    print(tables)
+    for row in tables:
+        print(row)
 
 
 ############------------ DRIVER CODE ------------##############################
