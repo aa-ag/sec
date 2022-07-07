@@ -84,7 +84,9 @@ def get_forms():
 
 def read_forms():
     df = pd.read_csv('forms.csv')
-    print(df["Number"])
+
+    for i, row in df.iterrows():
+        print(row["Number"].split(':')[1])
 
 ############------------ DRIVER CODE ------------##############################
 if __name__ == "__main__":
