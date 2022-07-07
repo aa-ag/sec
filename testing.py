@@ -79,7 +79,7 @@ def get_forms():
     tables = pd.read_html(url)
     df = pd.concat(tables)
 
-    print(tables)
+    df.to_csv('forms.csv')
     # forms = set()
 
     # for i, row in df.iterrows():
