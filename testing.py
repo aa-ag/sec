@@ -79,13 +79,14 @@ def get_forms():
     tables = pd.read_html(url)
     df = pd.concat(tables)
 
-    forms = set()
+    print(tables)
+    # forms = set()
 
-    for i, row in df.iterrows():
-        form_name = row["Number"].split(':')[1]
-        forms.add(form_name)
+    # for i, row in df.iterrows():
+    #     form_name = row["Number"].split(':')[1]
+    #     forms.add(form_name)
 
-    print(forms)
+    # print(forms)
 
 
 ############------------ DRIVER CODE ------------##############################
