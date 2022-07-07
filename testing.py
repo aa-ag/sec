@@ -80,14 +80,14 @@ def get_forms():
     df = pd.concat(tables)
 
     df.to_csv('forms.csv')
-    # forms = set()
 
-    # for i, row in df.iterrows():
-    #     form_name = row["Number"].split(':')[1]
-    #     forms.add(form_name)
 
-    # print(forms)
+def read_forms():
+    with open('forms.csv', 'r') as csv_file:
+        forms = set()
 
+        for row in csv_file:
+            print(row)
 
 ############------------ DRIVER CODE ------------##############################
 if __name__ == "__main__":
@@ -96,4 +96,5 @@ if __name__ == "__main__":
     # get_company_facts("0000320193", headers)
     # get_company_financials("0000320193", headers)
     # get_company_submissions("0001463172", headers)
-    get_forms()
+    # get_forms()
+    read_forms()
