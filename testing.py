@@ -83,11 +83,8 @@ def get_forms():
 
 
 def read_forms():
-    with open('forms.csv', 'r') as csv_file:
-        forms = set()
-
-        for row in csv_file:
-            print(row)
+    df = pd.read_csv('forms.csv')
+    print(df["Number"])
 
 ############------------ DRIVER CODE ------------##############################
 if __name__ == "__main__":
