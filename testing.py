@@ -3,6 +3,7 @@ import requests
 import pandas as pd
 from pprint import pprint
 import json
+import feedparser
 
 
 ############------------ FUNCTION(S) ------------##############################
@@ -101,6 +102,11 @@ def read_forms():
 
     pprint(forms)
 
+
+def parse_rss_feed():
+    pass
+
+
 ############------------ DRIVER CODE ------------##############################
 if __name__ == "__main__":
     # get_ciks(headers)
@@ -109,4 +115,5 @@ if __name__ == "__main__":
     # get_company_financials("0000320193", headers)
     # get_company_submissions("0001463172", headers)
     # get_forms()
-    read_forms()
+    # read_forms()
+    parse_rss_feed()
