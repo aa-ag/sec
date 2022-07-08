@@ -104,7 +104,9 @@ def read_forms():
 
 
 def parse_rss_feed():
-    pass
+    url = 'https://www.sec.gov/Archives/edgar/usgaap.rss.xml'
+    feed = feedparser.parse(url)
+    print(feed.keys())
 
 
 ############------------ DRIVER CODE ------------##############################
