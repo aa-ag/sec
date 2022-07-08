@@ -88,6 +88,10 @@ def get_forms():
 
 
 def read_forms():
+    '''
+     read downloaded forms and return
+     each form name
+    '''
     df = pd.read_csv('forms.csv')
 
     for i, row in df.iterrows():
