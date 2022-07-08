@@ -94,8 +94,12 @@ def read_forms():
     '''
     df = pd.read_csv('forms.csv')
 
+    forms = set()
+
     for i, row in df.iterrows():
-        print(row["Number"].split(':')[1])
+        forms.add(row["Number"].split(':')[1])
+
+    pprint(forms)
 
 ############------------ DRIVER CODE ------------##############################
 if __name__ == "__main__":
