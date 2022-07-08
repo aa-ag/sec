@@ -75,6 +75,11 @@ def get_company_submissions(cik, headers):
 
 
 def get_forms():
+    '''
+     read forms website, concatenate resulting
+     list of dataframes and save the concatenated
+     df into a csv store for reusing locally
+    '''
     url = "https://www.sec.gov/forms"
     tables = pd.read_html(url)
     df = pd.concat(tables)
