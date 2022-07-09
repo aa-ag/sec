@@ -1,4 +1,5 @@
 ############------------ IMPORTS ------------###################################
+from email import header
 import requests
 import pandas as pd
 from pprint import pprint
@@ -103,11 +104,10 @@ def read_forms():
     pprint(forms)
 
 
-def parse_rss_feed():
+def parse_rss_feed(headers):
     url = 'https://www.sec.gov/Archives/edgar/usgaap.rss.xml'
-    feed = feedparser.parse(url)
-    print(feed.keys())
-
+    feed = feedparser.parse(url, agent=headers)
+    print(feed)
 
 ############------------ DRIVER CODE ------------##############################
 if __name__ == "__main__":
@@ -118,4 +118,4 @@ if __name__ == "__main__":
     # get_company_submissions("0001463172", headers)
     # get_forms()
     # read_forms()
-    parse_rss_feed()
+    parse_rss_feed(headers)
