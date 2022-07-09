@@ -107,9 +107,10 @@ def read_forms():
 def parse_rss_feed():
     url = 'https://www.sec.gov/Archives/edgar/usgaap.rss.xml'
     feed = feedparser.parse(url, agent="User-Agent aaron@aguerrevere.dev")
-    store = open("rss.json", "w")
-    json.dump(feed, store)
-    print("All done.")
+    print(feed['entries'])
+    # store = open("rss.json", "w")
+    # json.dump(feed, store)
+    # print("All done.")
 
 
 ############------------ DRIVER CODE ------------##############################
