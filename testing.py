@@ -109,6 +109,7 @@ def parse_rss_feed():
     feed = feedparser.parse(url, agent="User-Agent aaron@aguerrevere.dev")
     store = open("rss.json", "w")
     json.dump(feed, store)
+    print("All done.")
 
 
 ############------------ DRIVER CODE ------------##############################
