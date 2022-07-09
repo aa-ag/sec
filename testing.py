@@ -104,9 +104,9 @@ def read_forms():
     pprint(forms)
 
 
-def parse_rss_feed(headers):
+def parse_rss_feed():
     url = 'https://www.sec.gov/Archives/edgar/usgaap.rss.xml'
-    feed = feedparser.parse(url, agent=headers)
+    feed = feedparser.parse(url, agent="User-Agent aaron@aguerrevere.dev")
     print(feed)
 
 ############------------ DRIVER CODE ------------##############################
@@ -118,4 +118,4 @@ if __name__ == "__main__":
     # get_company_submissions("0001463172", headers)
     # get_forms()
     # read_forms()
-    parse_rss_feed(headers)
+    parse_rss_feed()
