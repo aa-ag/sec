@@ -5,6 +5,7 @@ import pandas as pd
 from pprint import pprint
 import json
 import feedparser
+from bs4 import BeautifulSoup as bs
 
 
 ############------------ FUNCTION(S) ------------##############################
@@ -116,7 +117,10 @@ def parse_rss_feed():
 def a_ten_k():
     tenkurl = 'https://www.sec.gov/ix?doc=/Archives/edgar/data/1463172/000119312522187294/d566326d10ka.htm'
     data = requests.get(tenkurl)
-    print(data.text)
+    soup = bs(data.content, 'html.parser')
+    text = soup.find_all(text=True)
+    print(text)
+
 
 ############------------ DRIVER CODE ------------##############################
 if __name__ == "__main__":
