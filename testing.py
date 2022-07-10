@@ -115,7 +115,7 @@ def parse_rss_feed():
 
 def a_ten_k():
     url = 'https://www.sec.gov/ix?doc=/Archives/edgar/data/1463172/000119312522187294/d566326d10ka.htm'
-    data = pd.read_html(url)
+    data = requests.get(url)
     print(data)
 
 ############------------ DRIVER CODE ------------##############################
