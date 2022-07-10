@@ -113,6 +113,9 @@ def parse_rss_feed():
     # print("All done.")
 
 
+def a_ten_k():
+    pass
+
 ############------------ DRIVER CODE ------------##############################
 if __name__ == "__main__":
     # get_ciks(headers)
@@ -122,4 +125,5 @@ if __name__ == "__main__":
     # get_company_submissions("0001463172", headers)
     # get_forms()
     # read_forms()
-    parse_rss_feed()
+    # parse_rss_feed()
+    a_ten_k()
