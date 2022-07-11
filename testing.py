@@ -106,6 +106,9 @@ def read_forms():
 
 
 def parse_rss_feed():
+    '''
+     Parse ssf feed from SEC
+    '''
     url = 'https://www.sec.gov/Archives/edgar/usgaap.rss.xml'
     feed = feedparser.parse(url, agent="User-Agent aaron@aguerrevere.dev")
     print(feed['entries'])
@@ -115,6 +118,9 @@ def parse_rss_feed():
 
 
 def a_ten_k():
+    '''
+     try to get specific doc: 10k for a given company
+    '''
     tenkurl = 'https://www.sec.gov/Archives/edgar/data/320193/000032019318000145/0000320193-18-000145.txt'
     data = requests.get(tenkurl)
     print(data.text)
