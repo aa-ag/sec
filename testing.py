@@ -115,11 +115,9 @@ def parse_rss_feed():
 
 
 def a_ten_k():
-    tenkurl = 'https://www.sec.gov/ix?doc=/Archives/edgar/data/1463172/000119312522187294/d566326d10ka.htm'
+    tenkurl = 'https://www.sec.gov/Archives/edgar/data/1463172/000119312522187294/d566326d10ka.htm'
     data = requests.get(tenkurl)
-    soup = bs(data.content, 'html.parser')
-    text = soup.find_all(text=True)
-    print(text)
+    print(data.text)
 
 
 ############------------ DRIVER CODE ------------##############################
