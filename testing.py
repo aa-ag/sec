@@ -115,7 +115,7 @@ def parse_rss_feed():
 
 
 def a_ten_k():
-    tenkurl = 'https://www.sec.gov/Archives/edgar/data/1463172/000119312522187294/d566326d10ka.htm'
+    tenkurl = 'https://www.sec.gov/Archives/edgar/data/320193/000032019318000145/0000320193-18-000145.txt'
     data = requests.get(tenkurl)
     print(data.text)
 
