@@ -6,6 +6,7 @@ from pprint import pprint
 import json
 import feedparser
 from bs4 import BeautifulSoup as bs
+import sleep
 
 
 ############------------ FUNCTION(S) ------------##############################
@@ -130,6 +131,7 @@ def a_ten_k():
 if __name__ == "__main__":
     # get_ciks(headers)
     headers = {"User-Agent": "aaron@aguerrevere.dev"}
+    sleep(0.1)
     # get_company_facts("0000320193", headers)
     # get_company_financials("0000320193", headers)
     # get_company_submissions("0001463172", headers)
