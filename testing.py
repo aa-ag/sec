@@ -107,7 +107,7 @@ def read_forms():
 
 def parse_rss_feed():
     '''
-     Parse ssf feed from SEC
+     Parse ssf feed from SEC``````
     '''
     url = 'https://www.sec.gov/Archives/edgar/usgaap.rss.xml'
     feed = feedparser.parse(url, agent="User-Agent aaron@aguerrevere.dev")
