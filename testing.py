@@ -5,7 +5,7 @@ import pandas as pd
 from pprint import pprint
 import json
 import feedparser
-from bs4 import BeautifulSoup as bs
+import re
 
 
 ############------------ FUNCTION(S) ------------##############################
@@ -126,7 +126,9 @@ def a_ten_k(headers):
         headers=headers
     )
     data = r.text
-    print(data[0:1300])
+    
+    ## regex patterns 
+    ten_k_starting_section = re.compile(r'<DOCUMENT>')
 
 
 ############------------ DRIVER CODE ------------##############################
