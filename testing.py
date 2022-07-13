@@ -126,7 +126,7 @@ def a_ten_k(headers):
         headers=headers
     )
     data = r.text
-    print(data)
+    print(data[0:1300])
 
 
 ############------------ DRIVER CODE ------------##############################
