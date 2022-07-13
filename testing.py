@@ -120,11 +120,13 @@ def parse_rss_feed():
 def a_ten_k(headers):
     '''
      try to get specific doc: 10k for a given company
-     check: https://gist.github.com/anshoomehra/ead8925ea291e233a5aa2dcaa2dc61b2
     '''
-    r = requests.get('https://www.sec.gov/Archives/edgar/data/320193/000032019318000145/0000320193-18-000145.txt')
+    r = requests.get(
+        'https://www.sec.gov/Archives/edgar/data/320193/000032019318000145/0000320193-18-000145.txt',
+        headers=headers
+    )
     data = r.text
-    print(data.text)
+    print(data)
 
 
 ############------------ DRIVER CODE ------------##############################
