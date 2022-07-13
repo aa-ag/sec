@@ -122,7 +122,7 @@ def a_ten_k(headers):
      try to get specific doc: 10k for a given company
     '''
     r = requests.get(
-        'https://www.sec.gov/Archives/edgar/data/320193/000032019318000145/0000320193-18-000145.txt',
+        'https://www.sec.gov/Archives/edgar/data/1463172/000146317222000027/0001463172-22-000027.txt',
         headers=headers
     )
     data = r.text
