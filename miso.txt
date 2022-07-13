@@ -1,0 +1,46 @@
+<html><body><sec-document>0001463172-22-000027.txt : 20220215
+<sec-header>0001463172-22-000027.hdr.sgml : 20220215
+<acceptance-datetime>20220215171433
+ACCESSION NUMBER:		0001463172-22-000027
+CONFORMED SUBMISSION TYPE:	10-K
+PUBLIC DOCUMENT COUNT:		234
+CONFORMED PERIOD OF REPORT:	20211231
+FILED AS OF DATE:		20220215
+DATE AS OF CHANGE:		20220215
+
+FILER:
+
+	COMPANY DATA:	
+		COMPANY CONFORMED NAME:			Zendesk, Inc.
+		CENTRAL INDEX KEY:			0001463172
+		STANDARD INDUSTRIAL CLASSIFICATION:	SERVICES-COMPUTER PROCESSING &amp; DATA PREPARATION [7374]
+		IRS NUMBER:				264411091
+		FISCAL YEAR END:			1231
+
+	FILING VALUES:
+		FORM TYPE:		10-K
+		SEC ACT:		1934 Act
+		SEC FILE NUMBER:	001-36456
+		FILM NUMBER:		22640166
+
+	BUSINESS ADDRESS:	
+		STREET 1:		989 MARKET STREET
+		CITY:			SAN FRANCISCO
+		STATE:			CA
+		ZIP:			94103
+		BUSINESS PHONE:		(415) 418-7506
+
+	MAIL ADDRESS:	
+		STREET 1:		989 MARKET STREET
+		CITY:			SAN FRANCISCO
+		STATE:			CA
+		ZIP:			94103
+</acceptance-datetime></sec-header>
+<document>
+<type>10-K
+<sequence>1
+<filename>zen-20211231.htm
+<description>10-K
+<text>
+<xbrl>
+<?xml version="1.0" ?><!--XBRL Document Created with Wdesk from Workiva--><!--Copyright 2022 Workiva--><!--r:7c61e208-bf52-4afd-ade8-5489ede174d3,g:0881214a-c04b-48f7-81dd-5c7fa34acf90,d:04ed2ae0b3214febb0ef31e398cd80e6--></xbrl></text></description></filename></sequence></type></document></sec-document></body></html>

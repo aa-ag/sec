@@ -127,10 +127,10 @@ def a_ten_k(headers):
         headers=headers
     )
     data = r.text
-    soup = bs(data, 'lxml')
+    soup = bs(data[0:1300], 'lxml')
     
     with open('miso.txt', 'w') as miso:
-        miso.write(soup)
+        miso.write(str(soup))
     
 
 
