@@ -6,6 +6,7 @@ from pprint import pprint
 import json
 import feedparser
 import re
+from bs4 import BeautifulSoup as bs
 
 
 ############------------ FUNCTION(S) ------------##############################
@@ -126,9 +127,11 @@ def a_ten_k(headers):
         headers=headers
     )
     data = r.text
+    soup = bs(data, 'lxml')
     
-    ## regex patterns 
-    ten_k_starting_section = re.compile(r'<DOCUMENT>')
+    with open('miso.txt', 'w') as miso:
+        miso.write(soup)
+    
 
 
 ############------------ DRIVER CODE ------------##############################
