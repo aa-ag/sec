@@ -134,7 +134,7 @@ def a_ten_k(headers):
         miso.write(str(soup))
 
     
-def parse_xml():
+def parse_xml(headers):
     url = 'https://www.sec.gov/Archives/edgar/data/1463172/000146317222000098/wf-form4_165040006949831.xml'
 
 
@@ -149,4 +149,5 @@ if __name__ == "__main__":
     # get_forms()
     # read_forms()
     # parse_rss_feed()
-    a_ten_k(headers)
+    # a_ten_k(headers)
+    parse_xml(headers)
