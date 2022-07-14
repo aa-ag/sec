@@ -136,6 +136,11 @@ def a_ten_k(headers):
     
 def parse_xml(headers):
     url = 'https://www.sec.gov/Archives/edgar/data/1463172/000146317222000098/wf-form4_165040006949831.xml'
+    r = requests.get(
+        url,
+        headers=headers
+    )
+    print(r.content)
 
 
 
