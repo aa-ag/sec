@@ -140,7 +140,11 @@ def parse_xml(headers):
         url,
         headers=headers
     )
-    print(r.content)
+    
+    tree = ET.fromstring(r.content)
+    root = tree.getroot()
+    
+    print(root.tag)
 
 
 
