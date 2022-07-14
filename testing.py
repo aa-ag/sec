@@ -140,11 +140,11 @@ def parse_xml(headers):
         url,
         headers=headers
     )
+
+    with open('xmltest.xml', 'w') as xmltest:
+        xmltest.write(r.content)
     
-    tree = ET.fromstring(r.content)
-    root = tree.getroot()
-    
-    print(root.tag)
+    print("All done.")
 
 
 
