@@ -7,6 +7,7 @@ import json
 import feedparser
 import re
 from bs4 import BeautifulSoup as bs
+import xml.etree.ElementTree as ET
 
 
 ############------------ FUNCTION(S) ------------##############################
@@ -131,7 +132,11 @@ def a_ten_k(headers):
     
     with open('miso.txt', 'w') as miso:
         miso.write(str(soup))
+
     
+def parse_xml():
+    url = 'https://www.sec.gov/Archives/edgar/data/1463172/000146317222000098/wf-form4_165040006949831.xml'
+
 
 
 ############------------ DRIVER CODE ------------##############################
