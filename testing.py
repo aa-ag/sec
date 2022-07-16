@@ -141,9 +141,11 @@ def parse_xml(headers):
         headers=headers
     )
 
-    with open('xmltest.xml', 'w') as xmltest:
-        xmltest.write(r.text)
+    # with open('xmltest.xml', 'w') as xmltest:
+    #     xmltest.write(r.text)
 
+    root = ET.fromstring(r.text)
+    print(root)
 
 
 ############------------ DRIVER CODE ------------##############################
