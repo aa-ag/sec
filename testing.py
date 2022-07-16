@@ -141,10 +141,8 @@ def parse_xml(headers):
         headers=headers
     )
 
-    with open('xmltest.txt', 'w') as xmltest:
-        xmltest.write(str(r.content))
-    
-    print("All done.")
+    with open('xmltest.xml', 'w') as xmltest:
+        xmltest.write(r.text)
 
 
 
