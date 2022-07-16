@@ -145,7 +145,10 @@ def parse_xml(headers):
     #     xmltest.write(r.text)
 
     root = ET.fromstring(r.text)
-    print(root)
+    
+    for element in root.iter():
+        print(element.tag)
+
 
 
 ############------------ DRIVER CODE ------------##############################
