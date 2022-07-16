@@ -147,7 +147,7 @@ def parse_xml(headers):
     root = ET.fromstring(r.text)
     
     for element in root.iter():
-        print(element.tag)
+        print(f"{element.tag}: {element.text}")
 
 
 
