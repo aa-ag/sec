@@ -157,8 +157,7 @@ def parse_xml(headers):
 def test_submissions():
     submissions = open("submissions.json")
     data = json.load(submissions)
-    for element in data:
-        print(element)
+    print(data["filings"]["recent"]["act"])
 
 ############------------ DRIVER CODE ------------##############################
 if __name__ == "__main__":
