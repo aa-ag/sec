@@ -72,7 +72,9 @@ def get_company_submissions(cik, headers):
         # format the response as a json
         response = http_request.json()
         # pretty-print the response
-        pprint(response)
+        # pprint(response)
+        for i in response["act"]:
+            print(i)
     #     store = open("submissions.json", "w")
     #     json.dump(response, store)
     #     print("All done.")
