@@ -72,11 +72,12 @@ def get_company_submissions(cik, headers):
         # format the response as a json
         response = http_request.json()
         # pretty-print the response
-        store = open("submissions.json", "w")
-        json.dump(response, store)
-        print("All done.")
-    else:
-        print(f"Something's wrong.\nStatus code: {http_request.status_code}")
+        pprint(response)
+    #     store = open("submissions.json", "w")
+    #     json.dump(response, store)
+    #     print("All done.")
+    # else:
+    #     print(f"Something's wrong.\nStatus code: {http_request.status_code}")
 
 
 def get_forms():
@@ -156,8 +157,8 @@ if __name__ == "__main__":
     # get_ciks(headers)
     headers = {"User-Agent": "aaron@aguerrevere.dev"}
     # get_company_facts("0000320193", headers)
-    get_company_financials("0001463172", headers)
-    # get_company_submissions("0001463172", headers)
+    # get_company_financials("0001463172", headers)
+    get_company_submissions("0001463172", headers)
     # get_forms()
     # read_forms()
     # parse_rss_feed()
