@@ -156,10 +156,10 @@ if __name__ == "__main__":
     # get_ciks(headers)
     headers = {"User-Agent": "aaron@aguerrevere.dev"}
     # get_company_facts("0000320193", headers)
-    # get_company_financials("0000320193", headers)
+    get_company_financials("0001463172", headers)
     # get_company_submissions("0001463172", headers)
     # get_forms()
     # read_forms()
     # parse_rss_feed()
     # a_ten_k(headers)
-    parse_xml(headers)
+    # parse_xml(headers)
