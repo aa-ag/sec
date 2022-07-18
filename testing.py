@@ -73,8 +73,9 @@ def get_company_submissions(cik, headers):
         response = http_request.json()
         # pretty-print the response
         # pprint(response)
-        for i in response["act"]:
-            print(i)
+        print(response["act"])
+        # for i in response["act"]:
+        #     print(i)
     #     store = open("submissions.json", "w")
     #     json.dump(response, store)
     #     print("All done.")
@@ -153,6 +154,8 @@ def parse_xml(headers):
         print(f"{element.tag}: {element.text}")
 
 
+def test_submissions():
+    pass
 
 ############------------ DRIVER CODE ------------##############################
 if __name__ == "__main__":
@@ -160,9 +163,10 @@ if __name__ == "__main__":
     headers = {"User-Agent": "aaron@aguerrevere.dev"}
     # get_company_facts("0000320193", headers)
     # get_company_financials("0001463172", headers)
-    get_company_submissions("0001463172", headers)
+    # get_company_submissions("0001463172", headers)
     # get_forms()
     # read_forms()
     # parse_rss_feed()
     # a_ten_k(headers)
     # parse_xml(headers)
+    test_submissions()
