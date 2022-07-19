@@ -162,7 +162,15 @@ def test_submissions():
 
 def get_past_ten_ks():
     data = test_submissions()
-    return
+    forms = data["filings"]["recent"]["form"]
+    
+    ten_ks = {"10-K's": []}
+
+    for i in range(len(forms)):
+        if forms[i] == '10-K':
+            ten_ks["10-K's"].append(i)
+
+    print(ten_ks)
 
 
 
