@@ -157,16 +157,15 @@ def parse_xml(headers):
 def test_submissions():
     submissions = open("submissions.json")
     data = json.load(submissions)
-    forms = data["filings"]["recent"]["form"]
+    return data
     
-    ten_ks = {"10-K's": []}
 
-    for i in range(len(forms)):
-        if forms[i] == '10-K':
-            ten_ks["10-K's"].append(i)
+def get_past_ten_ks():
+    data = test_submissions()
+    return
 
-    print(ten_ks)
-    
+
+
 
 ############------------ DRIVER CODE ------------##############################
 if __name__ == "__main__":
@@ -180,4 +179,5 @@ if __name__ == "__main__":
     # parse_rss_feed()
     # a_ten_k(headers)
     # parse_xml(headers)
-    test_submissions()
+    # test_submissions()
+    get_past_ten_ks()
