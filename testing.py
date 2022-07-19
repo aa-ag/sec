@@ -159,11 +159,13 @@ def test_submissions():
     data = json.load(submissions)
     forms = data["filings"]["recent"]["form"]
     
-    ten_ks = dict()
+    ten_ks = {"10-K's": []}
 
     for i in range(len(forms)):
         if forms[i] == '10-K':
-            print(forms[i])
+            ten_ks["10-K's"].append(i)
+
+    print(ten_ks)
     
 
 ############------------ DRIVER CODE ------------##############################
