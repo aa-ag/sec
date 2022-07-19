@@ -158,7 +158,12 @@ def test_submissions():
     submissions = open("submissions.json")
     data = json.load(submissions)
     forms = data["filings"]["recent"]["form"]
-    print(len(forms))
+    
+    ten_ks = dict()
+
+    for i in range(len(forms)):
+        if forms[i] == '10-K':
+            print(forms[i])
     
 
 ############------------ DRIVER CODE ------------##############################
