@@ -160,7 +160,7 @@ def test_submissions():
     return data
     
 
-def get_past_ten_ks():
+def get_past_ten_ks(cik):
     data = test_submissions()
     forms = data["filings"]["recent"]["form"]
     
@@ -174,7 +174,7 @@ def get_past_ten_ks():
     accession_numbers = data["filings"]["recent"]["accessionNumber"]
     for i in indices:
         clean = accession_numbers[i].replace('-', '')
-        print('https://www.sec.gov/Archives/edgar/data/1463172/' + clean)
+        print(f'https://www.sec.gov/Archives/edgar/data/{cik}/' + clean)
 
 
 
@@ -193,4 +193,4 @@ if __name__ == "__main__":
     # a_ten_k(headers)
     # parse_xml(headers)
     # test_submissions()
-    get_past_ten_ks()
+    get_past_ten_ks(1318605)
