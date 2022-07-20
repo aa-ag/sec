@@ -174,7 +174,7 @@ def get_past_ten_ks():
     accession_numbers = data["filings"]["recent"]["accessionNumber"]
     for i in indices:
         clean = accession_numbers[i].split('-')
-        print(clean)
+        print(''.join(clean[1:]))
 
 
 
