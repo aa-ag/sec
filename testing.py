@@ -173,8 +173,8 @@ def get_past_ten_ks():
     indices = ten_ks["10-K's"]
     accession_numbers = data["filings"]["recent"]["accessionNumber"]
     for i in indices:
-        clean = accession_numbers[i].split('-')
-        print(''.join(clean[1:]))
+        clean = accession_numbers[i].replace('-', '')
+        print('https://www.sec.gov/Archives/edgar/data/1463172/' + clean)
 
 
 
