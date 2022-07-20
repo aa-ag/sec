@@ -170,7 +170,10 @@ def get_past_ten_ks():
         if forms[i] == '10-K':
             ten_ks["10-K's"].append(i)
 
-    print(ten_ks)
+    indices = ten_ks["10-K's"]
+    accession_numbers = data["filings"]["recent"]["accessionNumber"]
+    for i in indices:
+        print(accession_numbers[i].split(['-']))
 
 
 
