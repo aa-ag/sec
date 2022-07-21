@@ -2,6 +2,7 @@
 *.csv
 *.json
 *.xml
+*.txt
 
 # Settings or config
 settings
