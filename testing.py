@@ -71,16 +71,11 @@ def get_company_submissions(cik, headers):
     if http_request.status_code == 200:
         # format the response as a json
         response = http_request.json()
-        # pretty-print the response
-        # pprint(response)
-        print(response["act"])
-        # for i in response["act"]:
-        #     print(i)
-    #     store = open("submissions.json", "w")
-    #     json.dump(response, store)
-    #     print("All done.")
-    # else:
-    #     print(f"Something's wrong.\nStatus code: {http_request.status_code}")
+        store = open("submissions.json", "w")
+        json.dump(response, store)
+        print("All done.")
+    else:
+        print(f"Something's wrong.\nStatus code: {http_request.status_code}")
 
 
 def get_forms():
@@ -113,7 +108,7 @@ def read_forms():
 
 def parse_rss_feed():
     '''
-     Parse ssf feed from SEC``````
+     Parse ssf feed from SEC
     '''
     url = 'https://www.sec.gov/Archives/edgar/usgaap.rss.xml'
     feed = feedparser.parse(url, agent="User-Agent aaron@aguerrevere.dev")
@@ -160,7 +155,9 @@ def test_submissions():
     return data
     
 
-def get_past_ten_ks(cik):
+def get_past_ten_ks(cik, headers):
+    get_company_submissions(cik, headers)
+    return
     data = test_submissions()
     forms = data["filings"]["recent"]["form"]
     
@@ -193,4 +190,4 @@ if __name__ == "__main__":
     # a_ten_k(headers)
     # parse_xml(headers)
     # test_submissions()
-    get_past_ten_ks(1318605)
+    get_past_ten_ks(1318605, headers)
