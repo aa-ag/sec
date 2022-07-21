@@ -118,19 +118,22 @@ def parse_rss_feed():
     # print("All done.")
 
 
-def a_ten_k(headers):
+def a_ten_k(url,headers):
     '''
      try to get specific doc: 10k for a given company
     '''
     r = requests.get(
-        'https://www.sec.gov/Archives/edgar/data/1463172/000146317222000027/0001463172-22-000027.txt',
+        url,
         headers=headers
     )
+    print(r.status_code)
     data = r.text
     soup = bs(data[0:1300], 'lxml')
     
-    with open('miso.txt', 'w') as miso:
+    count = 1
+    with open(f'tesla_{count}.txt', 'w') as miso:
         miso.write(str(soup))
+        count += 1
 
     
 def parse_xml(headers):
@@ -170,8 +173,9 @@ def get_past_ten_ks(cik, headers):
     accession_numbers = data["filings"]["recent"]["accessionNumber"]
     for i in indices:
         clean = accession_numbers[i].replace('-', '')
-        print(f'https://www.sec.gov/Archives/edgar/data/{cik}/' + clean)
-
+        url = f'https://www.sec.gov/Archives/edgar/data/{cik}/' + clean
+        print(url)
+        a_ten_k(url, headers)
 
 
 
