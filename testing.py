@@ -156,8 +156,7 @@ def test_submissions():
     
 
 def get_past_ten_ks(cik, headers):
-    get_company_submissions(cik, headers)
-    return
+    # get_company_submissions(cik, headers)
     data = test_submissions()
     forms = data["filings"]["recent"]["form"]
     
@@ -190,4 +189,4 @@ if __name__ == "__main__":
     # a_ten_k(headers)
     # parse_xml(headers)
     # test_submissions()
-    get_past_ten_ks(1318605, headers)
+    get_past_ten_ks("0001318605", headers)
