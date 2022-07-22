@@ -126,7 +126,7 @@ def a_ten_k(url,count,headers):
         url,
         headers=headers
     )
-    print(r.status_code)
+    # print(r.status_code)
     data = r.text
     soup = bs(data[0:1300], 'lxml')
     
