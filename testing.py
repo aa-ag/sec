@@ -8,6 +8,7 @@ import feedparser
 import re
 from bs4 import BeautifulSoup as bs
 import xml.etree.ElementTree as ET
+import webbrowser
 
 
 ############------------ FUNCTION(S) ------------##############################
@@ -179,7 +180,9 @@ def get_past_ten_ks(cik, headers):
 
 
 def test_url_patterns():
-    pass
+    year = 2016
+    url = f'https://www.sec.gov/Archives/edgar/data/1318605/000156459017003118/tsla-10k_{}1231.htm'
+    open(url)
 
 ############------------ DRIVER CODE ------------##############################
 if __name__ == "__main__":
