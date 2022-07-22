@@ -178,7 +178,8 @@ def get_past_ten_ks(cik, headers):
         count += 1
 
 
-
+def test_url_patterns():
+    pass
 
 ############------------ DRIVER CODE ------------##############################
 if __name__ == "__main__":
@@ -193,4 +194,5 @@ if __name__ == "__main__":
     # a_ten_k(headers)
     # parse_xml(headers)
     # test_submissions()
-    get_past_ten_ks("0001318605", headers)
+    # get_past_ten_ks("0001318605", headers)
+    test_url_patterns()
